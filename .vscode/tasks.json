@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+            "args": ["WORKSPACE_NAME=${workspaceFolderBasename}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build the Raylib game using Makefile"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./game.exe",
+            "dependsOn": "build game",
+            "group": "none",
+            "problemMatcher": []
+        }
+    ]
+}

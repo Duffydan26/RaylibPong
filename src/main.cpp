@@ -1,7 +1,8 @@
-#include <raylib.h>
-#include <iostream>
+#define FMT_HEADER_ONLY
 
-using namespace std;
+#include <raylib.h>
+#include <fmt/core.h>
+
 
 Color Green = Color{ 38, 185, 154, 255 };
 Color Dark_Green = Color{ 20, 160, 133, 255 };
@@ -130,12 +131,13 @@ CpuPaddle cpu;
 
 int main()
 {
-    cout << "Starting the game" << endl;
+    fmt::print("Starting Game\n");
 
-    const int screen_width = 1200;
-    const int screen_height = 800;
+    const int screen_width = 2560;
+    const int screen_height = 1440;
 
     InitWindow(screen_width, screen_height, "Pong!");
+    ToggleBorderlessWindowed();
     SetTargetFPS(60);
 
     ball.radius = 20;
