@@ -52,8 +52,8 @@ public:
 
     void ResetBall()
     {
-        x = GetScreenWidth() / 2;
-        y = GetScreenHeight() / 2;
+        x = static_cast<int>(GetScreenWidth() / 2);
+        y = static_cast<int>(GetScreenHeight() / 2);
 
         int speed_choices[2] = { -1, 1 };
         speed_x *= speed_choices[GetRandomValue(0, 1)];
@@ -133,11 +133,10 @@ int main()
 {
     fmt::print("Starting Game\n");
 
-    const int screen_width = 2560;
-    const int screen_height = 1440;
+    const int screen_width = 800;
+    const int screen_height = 600;
 
     InitWindow(screen_width, screen_height, "Pong!");
-    ToggleBorderlessWindowed();
     SetTargetFPS(60);
 
     ball.radius = 20;
